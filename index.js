@@ -1,18 +1,18 @@
-function tambah(a, b) {
-  return a + b;
+
+const display = document.getElementById("display");
+
+function appendValue(value) {
+  display.value += value;
 }
 
-function kurang(a, b) {
-  return a - b;
-}
-
-function kali(a, b) {
-  return a * b;
-}
-
-function bagi(a, b) {
-  if (b === 0) {
-    return "Error: pembagian dengan nol!";
+function calculate() {
+  try {
+    display.value = eval(display.value);
+  } catch {
+    display.value = "Error";
   }
-  return a / b;
+}
+
+function clearDisplay() {
+  display.value = "";
 }
