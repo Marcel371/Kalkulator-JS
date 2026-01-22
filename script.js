@@ -2,15 +2,14 @@ const display = document.querySelector(".display");
 const buttons = document.querySelectorAll(".btn");
 
 let currentInput = "";
-let operator = "";
 let previousInput = "";
+let operator = "";
 
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     const value = button.textContent;
 
     if (button.classList.contains("dark")) {
-     
       currentInput += value;
       display.textContent = currentInput;
     } else if (button.classList.contains("operator")) {
@@ -37,27 +36,17 @@ buttons.forEach(button => {
   });
 });
 
-// Fungsi hitung
 function calculate() {
-  let result;
   const prev = parseFloat(previousInput);
   const curr = parseFloat(currentInput);
+  let result;
 
   switch (operator) {
-    case "+":
-      result = prev + curr;
-      break;
-    case "−":
-      result = prev - curr;
-      break;
-    case "×":
-      result = prev * curr;
-      break;
-    case "÷":
-      result = curr !== 0 ? prev / curr : "Error";
-      break;
-    default:
-      return;
+    case "+": result = prev + curr; break;
+    case "-": result = prev - curr; break;
+    case "×": result = prev * curr; break;
+    case "÷": result = curr !== 0 ? prev / curr : "Error"; break;
+    default: return;
   }
 
   display.textContent = result;
