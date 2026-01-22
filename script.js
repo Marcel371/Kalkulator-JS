@@ -5,7 +5,7 @@ let currentInput = "";
 let previousInput = "";
 let operator = "";
 
-// Tambahkan event listener ke semua tombol
+// Event listener untuk semua tombol
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     const value = button.textContent;
