@@ -10,6 +10,7 @@ buttons.forEach(button => {
     const value = button.textContent;
 
     if (button.classList.contains("dark")) {
+      // angka atau titik
       currentInput += value;
       display.textContent = currentInput;
     } else if (button.classList.contains("operator")) {
@@ -43,17 +44,11 @@ function calculate() {
 
   switch (operator) {
     case "+": result = prev + curr; break;
-    case "−": result = prev - curr; break;   
-    case "×": result = prev * curr; break;  
-    case "÷": result = curr !== 0 ? prev / curr : "Error"; break; 
+    case "−": result = prev - curr; break;
+    case "×": result = prev * curr; break;
+    case "÷": result = curr !== 0 ? prev / curr : "Error"; break;
     default: return;
   }
-
-  display.textContent = result;
-  currentInput = String(result);
-  operator = "";
-  previousInput = "";
-}
 
   display.textContent = result;
   currentInput = String(result);
