@@ -43,11 +43,17 @@ function calculate() {
 
   switch (operator) {
     case "+": result = prev + curr; break;
-    case "-": result = prev - curr; break;
-    case "×": result = prev * curr; break;
-    case "÷": result = curr !== 0 ? prev / curr : "Error"; break;
+    case "−": result = prev - curr; break;   
+    case "×": result = prev * curr; break;  
+    case "÷": result = curr !== 0 ? prev / curr : "Error"; break; 
     default: return;
   }
+
+  display.textContent = result;
+  currentInput = String(result);
+  operator = "";
+  previousInput = "";
+}
 
   display.textContent = result;
   currentInput = String(result);
