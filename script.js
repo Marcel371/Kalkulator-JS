@@ -5,6 +5,7 @@ let currentInput = "";
 let previousInput = "";
 let operator = "";
 
+// Tambahkan event listener ke semua tombol
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     const value = button.textContent;
@@ -37,6 +38,7 @@ buttons.forEach(button => {
   });
 });
 
+// Fungsi hitung
 function calculate() {
   const prev = parseFloat(previousInput);
   const curr = parseFloat(currentInput);
@@ -44,9 +46,9 @@ function calculate() {
 
   switch (operator) {
     case "+": result = prev + curr; break;
-    case "−": result = prev - curr; break;
-    case "×": result = prev * curr; break;
-    case "÷": result = curr !== 0 ? prev / curr : "Error"; break;
+    case "−": result = prev - curr; break;   // simbol minus dari HTML
+    case "×": result = prev * curr; break;   // simbol kali dari HTML
+    case "÷": result = curr !== 0 ? prev / curr : "Error"; break; // simbol bagi dari HTML
     default: return;
   }
 
@@ -56,6 +58,7 @@ function calculate() {
   previousInput = "";
 }
 
+// Fungsi reset
 function clearAll() {
   currentInput = "";
   previousInput = "";
